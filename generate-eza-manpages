@@ -1,0 +1,36 @@
+#!/bin/bash
+
+die() {
+  echo "$@" 1>&2
+  exit 1
+}
+
+PV="$1"
+DIR="$2"
+
+[[ -n "${PV}" ]] || die "First argument must be a version number"
+[[ -d "${DIR}" ]] || die "Second argument must be a the eza repo"
+[[ -d "${DIR}/manpages/.git" ]] || die "${DIR}/manpages must exists and be a git repo"
+
+pushd "${DIR}" || die
+
+git checkout "v${PV}"
+
+pandoc --standalone -f markdown -t man man/eza.1.md -o manpages/eza.1
+pandoc --standalone -f markdown -t man man/eza_colors.5.md -o manpages/eza_colors.5
+pandoc --standalone -f markdown -t man man/eza_colors-explanation.5.md -o manpages/eza_colors-explanation.5
+
+export XZ_DEFAULTS="-9 -T 0"
+tar -caf eza-${PV}-manpages.tar.xz manpages
+
+pushd manpages || die
+
+git add .
+git commit -m "update for ${PV}"
+git tag "${PV}" -m "${PV}"
+git push --tags
+
+gh release create "${PV}" ../eza-${PV}-manpages.tar.xz
+
+popd # $DIR/manpages
+popd # $DIR
