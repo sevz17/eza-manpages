@@ -14,11 +14,11 @@ DIR="$2"
 
 pushd "${DIR}" || die
 
-git checkout "v${PV}"
+git checkout "v${PV}" || die "Tag v${PV} does not exists"
 
-pandoc --standalone -f markdown -t man man/eza.1.md -o manpages/eza.1
-pandoc --standalone -f markdown -t man man/eza_colors.5.md -o manpages/eza_colors.5
-pandoc --standalone -f markdown -t man man/eza_colors-explanation.5.md -o manpages/eza_colors-explanation.5
+go-md2man -in man/eza.1.md -out manpages/eza.1
+go-md2man -in man/eza_colors.5.md -out manpages/eza_colors.5
+go-md2man -in  man/eza_colors-explanation.5.md -out manpages/eza_colors-explanation.5
 
 export XZ_DEFAULTS="-9 -T 0"
 tar -caf eza-${PV}-manpages.tar.xz manpages
