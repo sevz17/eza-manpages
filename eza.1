@@ -137,10 +137,6 @@ The default value is \fB\fCnone\fR
 \fB\fCabsolute\fR mode highlights based on file modification time relative to the past year.
 \fB\fCrelative\fR mode highlights based on file modification time in relation to other files. \fB\fCnone\fR disables highlighting.
 
-.TP
-\fB\fC--smart-group\fR
-Only show group if it has a different name from owner
-
 
 .SH FILTERING AND SORTING OPTIONS
 .TP
@@ -219,6 +215,10 @@ Use the changed timestamp field.
 List each file’s group.
 
 .TP
+\fB\fC--smart-group\fR
+Only show group if it has a different name from owner
+
+.TP
 \fB\fC-h\fR, \fB\fC--header\fR
 Add a header row to each column.
 
@@ -260,7 +260,7 @@ Valid timestamp styles are ‘\fB\fCdefault\fR’, ‘\fB\fCiso\fR’, ‘\fB\fC
 
 .TP
 \fB\fC--total-size\fR
-Show recursive directory size.
+Show recursive directory size (unix only).
 
 .TP
 \fB\fC-u\fR, \fB\fC--accessed\fR
