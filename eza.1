@@ -291,6 +291,10 @@ Suppress the user field.
 Suppress the time field.
 
 .TP
+\fB\fC--stdin\fR
+When you wish to pipe directories to eza/read from stdin. Separate one per line or define custom separation char in \fB\fCEZA_STDIN_SEPARATOR\fR env variable.
+
+.TP
 \fB\fC-@\fR, \fB\fC--extended\fR
 List each file’s extended attributes and sizes.
 
@@ -392,6 +396,10 @@ If set, automates the same behavior as using \fB\fC--icons\fR or \fB\fC--icons=a
 
 .PP
 Any explicit use of the \fB\fC--icons=WHEN\fR flag overrides this behavior.
+
+.SH \fB\fCEZA_STDIN_SEPARATOR\fR
+.PP
+Specifies the separator to use when file names are piped from stdin. Defaults to newline.
 
 
 .SH EXIT STATUSES
