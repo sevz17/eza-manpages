@@ -21,7 +21,7 @@ go-md2man -in man/eza_colors.5.md -out manpages/eza_colors.5
 go-md2man -in  man/eza_colors-explanation.5.md -out manpages/eza_colors-explanation.5
 
 export XZ_DEFAULTS="-9 -T 0"
-tar -caf eza-${PV}-manpages.tar.xz manpages
+tar -caf eza-${PV}-manpages.tar.xz manpages/eza{.1,_colors{,-explanation}.5}
 
 
 pushd manpages || die
