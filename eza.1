@@ -243,6 +243,10 @@ Show mount details (Linux and Mac only)
 List numeric user and group IDs.
 
 .TP
+\fB\fC-O\fR, \fB\fC--flags\fR
+List file flags on Mac and BSD systems and file attributes on Windows systems.  By default, Windows attributes are displayed in a long form.  To display in attributes as single character set the environment variable \fB\fCEZA_WINDOWS_ATTRIBUTES=short\fR\&.  On BSD systems see chflags(1) for a list of file flags and their meanings.
+
+.TP
 \fB\fC-S\fR, \fB\fC--blocksize\fR
 List each file’s size of allocated file system blocks.
 
@@ -256,7 +260,13 @@ Valid timestamp fields are ‘\fB\fCmodified\fR’, ‘\fB\fCchanged\fR’, ‘\
 \fB\fC--time-style=STYLE\fR
 How to format timestamps.
 
-Valid timestamp styles are ‘\fB\fCdefault\fR’, ‘\fB\fCiso\fR’, ‘\fB\fClong-iso\fR’, ‘\fB\fCfull-iso\fR’, ‘\fB\fCrelative\fR\&', or you can use a \fB\fCcustom\fR style with '\fB\fC+\fR\&' as prefix. (Ex: "\fB\fC+%Y/%m/%d, %H:%M\fR" => "\fB\fC2023/9/30, 12:00\fR"). for more details about format syntax, please read: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+Valid timestamp styles are ‘\fB\fCdefault\fR’, ‘\fB\fCiso\fR’, ‘\fB\fClong-iso\fR’, ‘\fB\fCfull-iso\fR’, ‘\fB\fCrelative\fR’, or a custom style ‘\fB\fC+<FORMAT>\fR’ (e.g., ‘\fB\fC+%Y-%m-%d %H:%M\fR’ => ‘\fB\fC2023-09-30 13:00\fR’).
+
+.PP
+\fB\fC<FORMAT>\fR should be a chrono format string.  For details on the chrono format syntax, please read: https://docs.rs/chrono/latest/chrono/format/strftime/index.html .
+
+.PP
+Alternatively, \fB\fC<FORMAT>\fR can be a two line string, the first line will be used for non-recent files and the second for recent files.  E.g., if \fB\fC<FORMAT>\fR is "\fB\fC%Y-%m-%d %H<newline>--%m-%d %H:%M\fR", non-recent files => "\fB\fC2022-12-30 13\fR", recent files => "\fB\fC--09-30 13:34\fR".
 
 .TP
 \fB\fC--total-size\fR
