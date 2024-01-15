@@ -8,18 +8,18 @@ eza_colors — customising the file and UI colours of eza
 
 .SH SYNOPSIS
 .PP
-The \fB\fCEZA_COLORS\fR environment variable can be used to customise the colours that \fB\fCeza\fR uses to highlight file names, file metadata, and parts of the UI.
+The \fBEZA_COLORS\fR environment variable can be used to customise the colours that \fBeza\fR uses to highlight file names, file metadata, and parts of the UI.
 
 .PP
-You can use the \fB\fCdircolors\fR program to generate a script that sets the variable from an input file, or if you don’t mind editing long strings of text, you can just type it out directly. These variables have the following structure:
+You can use the \fBdircolors\fR program to generate a script that sets the variable from an input file, or if you don’t mind editing long strings of text, you can just type it out directly. These variables have the following structure:
 
 .RS
 .IP \(bu 2
-A list of key-value pairs separated by ‘\fB\fC=\fR’, such as ‘\fB\fC*.txt=32\fR’.
+A list of key-value pairs separated by ‘\fB=\fR’, such as ‘\fB*.txt=32\fR’.
 .IP \(bu 2
-Multiple ANSI formatting codes are separated by ‘\fB\fC;\fR’, such as ‘\fB\fC*.txt=32;1;4\fR’.
+Multiple ANSI formatting codes are separated by ‘\fB;\fR’, such as ‘\fB*.txt=32;1;4\fR’.
 .IP \(bu 2
-Finally, multiple pairs are separated by ‘\fB\fC:\fR’, such as ‘\fB\fC*.txt=32:*.mp3=1;35\fR’.
+Finally, multiple pairs are separated by ‘\fB:\fR’, such as ‘\fB*.txt=32:*.mp3=1;35\fR’.
 
 .RE
 
@@ -27,471 +27,471 @@ Finally, multiple pairs are separated by ‘\fB\fC:\fR’, such as ‘\fB\fC*.tx
 The key half of the pair can either be a two-letter code or a file glob, and anything that’s not a valid code will be treated as a glob, including keys that happen to be two letters long.
 
 .PP
-For backwards compatibility \fB\fCEXA_COLORS\fR environment variables is checked if \fB\fCEZA_COLORS\fR is unset.
+For backwards compatibility \fBEXA_COLORS\fR environment variables is checked if \fBEZA_COLORS\fR is unset.
 
 
 .SH EXAMPLES
 .TP
-\fB\fCEZA_COLORS="uu=0:gu=0"\fR
+\fBEZA_COLORS="uu=0:gu=0"\fR
 Disable the “current user” highlighting
 
 .TP
-\fB\fCEZA_COLORS="da=32"\fR
+\fBEZA_COLORS="da=32"\fR
 Turn the date column green
 
 .TP
-\fB\fCEZA_COLORS="Vagrantfile=1;4;33"\fR
+\fBEZA_COLORS="Vagrantfile=1;4;33"\fR
 Highlight Vagrantfiles
 
 .TP
-\fB\fCEZA_COLORS="*.zip=38;5;125"\fR
+\fBEZA_COLORS="*.zip=38;5;125"\fR
 Override the existing zip colour
 
 .TP
-\fB\fCEZA_COLORS="*.md=38;5;121:*.log=38;5;248"\fR
+\fBEZA_COLORS="*.md=38;5;121:*.log=38;5;248"\fR
 Markdown files a shade of green, log files a shade of grey
 
 
 .SH LIST OF CODES
 .PP
-\fB\fCLS_COLORS\fR can use these ten codes:
+\fBLS_COLORS\fR can use these ten codes:
 
 .TP
-\fB\fCdi\fR
+\fBdi\fR
 directories
 
 .TP
-\fB\fCex\fR
+\fBex\fR
 executable files
 
 .TP
-\fB\fCfi\fR
+\fBfi\fR
 regular files
 
 .TP
-\fB\fCpi\fR
+\fBpi\fR
 named pipes
 
 .TP
-\fB\fCso\fR
+\fBso\fR
 sockets
 
 .TP
-\fB\fCbd\fR
+\fBbd\fR
 block devices
 
 .TP
-\fB\fCcd\fR
+\fBcd\fR
 character devices
 
 .TP
-\fB\fCln\fR
+\fBln\fR
 symlinks
 
 .TP
-\fB\fCor\fR
+\fBor\fR
 symlinks with no target
 
 .PP
-\fB\fCEZA_COLORS\fR can use many more:
+\fBEZA_COLORS\fR can use many more:
 
 .TP
-\fB\fCoc\fR
+\fBoc\fR
 the permissions displayed as octal
 
 .TP
-\fB\fCur\fR
+\fBur\fR
 the user-read permission bit
 
 .TP
-\fB\fCuw\fR
+\fBuw\fR
 the user-write permission bit
 
 .TP
-\fB\fCux\fR
+\fBux\fR
 the user-execute permission bit for regular files
 
 .TP
-\fB\fCue\fR
+\fBue\fR
 the user-execute for other file kinds
 
 .TP
-\fB\fCgr\fR
+\fBgr\fR
 the group-read permission bit
 
 .TP
-\fB\fCgw\fR
+\fBgw\fR
 the group-write permission bit
 
 .TP
-\fB\fCgx\fR
+\fBgx\fR
 the group-execute permission bit
 
 .TP
-\fB\fCtr\fR
+\fBtr\fR
 the others-read permission bit
 
 .TP
-\fB\fCtw\fR
+\fBtw\fR
 the others-write permission bit
 
 .TP
-\fB\fCtx\fR
+\fBtx\fR
 the others-execute permission bit
 
 .TP
-\fB\fCsu\fR
+\fBsu\fR
 setuid, setgid, and sticky permission bits for files
 
 .TP
-\fB\fCsf\fR
+\fBsf\fR
 setuid, setgid, and sticky for other file kinds
 
 .TP
-\fB\fCxa\fR
+\fBxa\fR
 the extended attribute indicator
 
 .TP
-\fB\fCsn\fR
-the numbers of a file’s size (sets \fB\fCnb\fR, \fB\fCnk\fR, \fB\fCnm\fR, \fB\fCng\fR and \fB\fCnt\fR)
+\fBsn\fR
+the numbers of a file’s size (sets \fBnb\fR, \fBnk\fR, \fBnm\fR, \fBng\fR and \fBnt\fR)
 
 .TP
-\fB\fCnb\fR
+\fBnb\fR
 the numbers of a file’s size if it is lower than 1 KB/Kib
 
 .TP
-\fB\fCnk\fR
+\fBnk\fR
 the numbers of a file’s size if it is between 1 KB/KiB and 1 MB/MiB
 
 .TP
-\fB\fCnm\fR
+\fBnm\fR
 the numbers of a file’s size if it is between 1 MB/MiB and 1 GB/GiB
 
 .TP
-\fB\fCng\fR
+\fBng\fR
 the numbers of a file’s size if it is between 1 GB/GiB and 1 TB/TiB
 
 .TP
-\fB\fCnt\fR
+\fBnt\fR
 the numbers of a file’s size if it is 1 TB/TiB or higher
 
 .TP
-\fB\fCsb\fR
-the units of a file’s size (sets \fB\fCub\fR, \fB\fCuk\fR, \fB\fCum\fR, \fB\fCug\fR and \fB\fCut\fR)
+\fBsb\fR
+the units of a file’s size (sets \fBub\fR, \fBuk\fR, \fBum\fR, \fBug\fR and \fBut\fR)
 
 .TP
-\fB\fCub\fR
+\fBub\fR
 the units of a file’s size if it is lower than 1 KB/Kib
 
 .TP
-\fB\fCuk\fR
+\fBuk\fR
 the units of a file’s size if it is between 1 KB/KiB and 1 MB/MiB
 
 .TP
-\fB\fCum\fR
+\fBum\fR
 the units of a file’s size if it is between 1 MB/MiB and 1 GB/GiB
 
 .TP
-\fB\fCug\fR
+\fBug\fR
 the units of a file’s size if it is between 1 GB/GiB and 1 TB/TiB
 
 .TP
-\fB\fCut\fR
+\fBut\fR
 the units of a file’s size if it is 1 TB/TiB or higher
 
 .TP
-\fB\fCdf\fR
+\fBdf\fR
 a device’s major ID
 
 .TP
-\fB\fCds\fR
+\fBds\fR
 a device’s minor ID
 
 .TP
-\fB\fCuu\fR
+\fBuu\fR
 a user that’s you
 
 .TP
-\fB\fCuR\fR
+\fBuR\fR
 a user that's root
 
 .TP
-\fB\fCun\fR
+\fBun\fR
 a user that’s someone else
 
 .TP
-\fB\fCgu\fR
+\fBgu\fR
 a group that you belong to
 
 .TP
-\fB\fCgR\fR
+\fBgR\fR
 a group related to root
 
 .TP
-\fB\fCgn\fR
+\fBgn\fR
 a group you aren’t a member of
 
 .TP
-\fB\fClc\fR
+\fBlc\fR
 a number of hard links
 
 .TP
-\fB\fClm\fR
+\fBlm\fR
 a number of hard links for a regular file with at least two
 
 .TP
-\fB\fCga\fR
+\fBga\fR
 a new flag in Git
 
 .TP
-\fB\fCgm\fR
+\fBgm\fR
 a modified flag in Git
 
 .TP
-\fB\fCgd\fR
+\fBgd\fR
 a deleted flag in Git
 
 .TP
-\fB\fCgv\fR
+\fBgv\fR
 a renamed flag in Git
 
 .TP
-\fB\fCgt\fR
+\fBgt\fR
 a modified metadata flag in Git
 
 .TP
-\fB\fCgi\fR
+\fBgi\fR
 an ignored flag in Git
 
 .TP
-\fB\fCgc\fR
+\fBgc\fR
 a conflicted flag in Git
 
 .TP
-\fB\fCGm\fR
+\fBGm\fR
 main branch of repo
 
 .TP
-\fB\fCGo\fR
+\fBGo\fR
 other branch of repo
 
 .TP
-\fB\fCGc\fR
+\fBGc\fR
 clean branch of repo
 
 .TP
-\fB\fCGd\fR
+\fBGd\fR
 dirty branch of repo
 
 .TP
-\fB\fCxx\fR
+\fBxx\fR
 “punctuation”, including many background UI elements
 
 .TP
-\fB\fCda\fR
+\fBda\fR
 a file’s date
 
 .TP
-\fB\fCin\fR
+\fBin\fR
 a file’s inode number
 
 .TP
-\fB\fCbl\fR
+\fBbl\fR
 a file’s number of blocks
 
 .TP
-\fB\fChd\fR
+\fBhd\fR
 the header row of a table
 
 .TP
-\fB\fClp\fR
+\fBlp\fR
 the path of a symlink
 
 .TP
-\fB\fCcc\fR
+\fBcc\fR
 an escaped character in a filename
 
 .TP
-\fB\fCbO\fR
+\fBbO\fR
 the overlay style for broken symlink paths
 
 .TP
-\fB\fCsp\fR
+\fBsp\fR
 special (not file, dir, mount, exec, pipe, socket, block device, char device, or link)
 
 .TP
-\fB\fCmp\fR
+\fBmp\fR
 a mount point
 
 .TP
-\fB\fCim\fR
+\fBim\fR
 a regular file that is an image
 
 .TP
-\fB\fCvi\fR
+\fBvi\fR
 a regular file that is a video
 
 .TP
-\fB\fCmu\fR
+\fBmu\fR
 a regular file that is lossy music
 
 .TP
-\fB\fClo\fR
+\fBlo\fR
 a regular file that is lossless music
 
 .TP
-\fB\fCcr\fR
+\fBcr\fR
 a regular file that is related to cryptography (ex: key or certificate)
 
 .TP
-\fB\fCdo\fR
+\fBdo\fR
 a regular file that is a document (ex: office suite document or PDF)
 
 .TP
-\fB\fCco\fR
+\fBco\fR
 a regular file that is compressed
 
 .TP
-\fB\fCtm\fR
+\fBtm\fR
 a regular file that is temporary (ex: a text editor's backup file)
 
 .TP
-\fB\fCcm\fR
+\fBcm\fR
 a regular file that is a compilation artifact (ex: Java class file)
 
 .TP
-\fB\fCbu\fR
+\fBbu\fR
 a regular file that is used to build a project (ex: Makefile)
 
 .TP
-\fB\fCsc\fR
+\fBsc\fR
 a regular file that is source code
 
 .TP
-\fB\fCSn\fR
+\fBSn\fR
 No security context on a file
 
 .TP
-\fB\fCSu\fR
+\fBSu\fR
 SELinux user
 
 .TP
-\fB\fCSr\fR
+\fBSr\fR
 SELinux role
 
 .TP
-\fB\fCSt\fR
+\fBSt\fR
 SELinux type
 
 .TP
-\fB\fCSl\fR
+\fBSl\fR
 SELinux level
 
 .TP
-\fB\fCff\fR
+\fBff\fR
 BSD file flags
 
 .PP
-Values in \fB\fCEXA_COLORS\fR override those given in \fB\fCLS_COLORS\fR, so you don’t need to re-write an existing \fB\fCLS_COLORS\fR variable with proprietary extensions.
+Values in \fBEXA_COLORS\fR override those given in \fBLS_COLORS\fR, so you don’t need to re-write an existing \fBLS_COLORS\fR variable with proprietary extensions.
 
 
 .SH LIST OF STYLES
 .PP
-Unlike some versions of \fB\fCls\fR, the given ANSI values must be valid colour codes: eza won’t just print out whichever characters are given.
+Unlike some versions of \fBls\fR, the given ANSI values must be valid colour codes: eza won’t just print out whichever characters are given.
 
 .PP
 The codes accepted by eza are:
 
 .TP
-\fB\fC1\fR
+\fB1\fR
 for bold
 
 .TP
-\fB\fC2\fR
+\fB2\fR
 for dimmed
 
 .TP
-\fB\fC3\fR
+\fB3\fR
 for italic
 
 .TP
-\fB\fC4\fR
+\fB4\fR
 for underline
 
 .TP
-\fB\fC31\fR
+\fB31\fR
 for red text
 
 .TP
-\fB\fC32\fR
+\fB32\fR
 for green text
 
 .TP
-\fB\fC33\fR
+\fB33\fR
 for yellow text
 
 .TP
-\fB\fC34\fR
+\fB34\fR
 for blue text
 
 .TP
-\fB\fC35\fR
+\fB35\fR
 for purple text
 
 .TP
-\fB\fC36\fR
+\fB36\fR
 for cyan text
 
 .TP
-\fB\fC37\fR
+\fB37\fR
 for white text
 
 .TP
-\fB\fC90\fR
+\fB90\fR
 for dark gray text
 
 .TP
-\fB\fC91\fR
+\fB91\fR
 for bright red text
 
 .TP
-\fB\fC92\fR
+\fB92\fR
 for bright green text
 
 .TP
-\fB\fC93\fR
+\fB93\fR
 for bright yellow text
 
 .TP
-\fB\fC94\fR
+\fB94\fR
 for bright blue text
 
 .TP
-\fB\fC95\fR
+\fB95\fR
 for bright purple text
 
 .TP
-\fB\fC96\fR
+\fB96\fR
 for bright cyan text
 
 .TP
-\fB\fC97\fR
+\fB97\fR
 for bright  text
 
 .TP
-\fB\fC38;5;nnn\fR
-for a colour from 0 to 255 (replace the \fB\fCnnn\fR part)
+\fB38;5;nnn\fR
+for a colour from 0 to 255 (replace the \fBnnn\fR part)
 
 .PP
 Many terminals will treat bolded text as a different colour, or at least provide the option to.
 
 .PP
 eza provides its own built-in set of file extension mappings that cover a large range of common file extensions, including documents, archives, media, and temporary files.
-Any mappings in the environment variables will override this default set: running eza with \fB\fCLS_COLORS="*.zip=32"\fR will turn zip files green but leave the colours of other compressed files alone.
+Any mappings in the environment variables will override this default set: running eza with \fBLS_COLORS="*.zip=32"\fR will turn zip files green but leave the colours of other compressed files alone.
 
 .PP
-You can also disable this built-in set entirely by including a \fB\fCreset\fR entry at the beginning of \fB\fCEZA_COLORS\fR\&.
-So setting \fB\fCEZA_COLORS="reset:*.txt=31"\fR will highlight only text files; setting \fB\fCEZA_COLORS="reset"\fR will highlight nothing.
+You can also disable this built-in set entirely by including a \fBreset\fR entry at the beginning of \fBEZA_COLORS\fR\&.
+So setting \fBEZA_COLORS="reset:*.txt=31"\fR will highlight only text files; setting \fBEZA_COLORS="reset"\fR will highlight nothing.
 
 
 .SH AUTHOR
@@ -499,8 +499,8 @@ So setting \fB\fCEZA_COLORS="reset:*.txt=31"\fR will highlight only text files; 
 eza is maintained by Christina Sørensen and many other contributors.
 
 .PP
-\fBSource code:\fP \fB\fChttps://github.com/eza-community/eza\fR \\
-\fBContributors:\fP \fB\fChttps://github.com/eza-community/eza/graphs/contributors\fR
+\fBSource code:\fP \fBhttps://github.com/eza-community/eza\fR \\
+\fBContributors:\fP \fBhttps://github.com/eza-community/eza/graphs/contributors\fR
 
 .PP
 Our infinite thanks to Benjamin ‘ogham’ Sago and all the other contributors of exa, from which eza was forked.
@@ -509,10 +509,10 @@ Our infinite thanks to Benjamin ‘ogham’ Sago and all the other contributors 
 .SH SEE ALSO
 .RS
 .IP \(bu 2
-eza.1.md
+
 \[la]eza.1.md\[ra]
 .IP \(bu 2
-eza_colors-explanation.5.md
-\[la]eza_colors-explanation.5.md\[ra]
+
+\[la]eza_colors\-explanation.5.md\[ra]
 
 .RE

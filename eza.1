@@ -8,353 +8,353 @@ eza — a modern replacement for ls
 
 .SH SYNOPSIS
 .PP
-\fB\fCeza [options] [files...]\fR
+\fBeza [options] [files...]\fR
 
 .PP
-\fBeza\fP is a modern replacement for \fB\fCls\fR\&.
+\fBeza\fP is a modern replacement for \fBls\fR\&.
 It uses colours for information by default, helping you distinguish between many types of files, such as whether you are the owner, or in the owning group.
 
 .PP
-It also has extra features not present in the original \fB\fCls\fR, such as viewing the Git status for a directory, or recursing into directories with a tree view.
+It also has extra features not present in the original \fBls\fR, such as viewing the Git status for a directory, or recursing into directories with a tree view.
 
 
 .SH EXAMPLES
 .TP
-\fB\fCeza\fR
+\fBeza\fR
 Lists the contents of the current directory in a grid.
 
 .TP
-\fB\fCeza --oneline --reverse --sort=size\fR
+\fBeza --oneline --reverse --sort=size\fR
 Displays a list of files with the largest at the top.
 
 .TP
-\fB\fCeza --long --header --inode --git\fR
+\fBeza --long --header --inode --git\fR
 Displays a table of files with a header, showing each file’s metadata, inode, and Git status.
 
 .TP
-\fB\fCeza --long --tree --level=3\fR
+\fBeza --long --tree --level=3\fR
 Displays a tree of files, three levels deep, as well as each file’s metadata.
 
 
 .SH META OPTIONS
 .TP
-\fB\fC--help\fR
+\fB--help\fR
 Show list of command-line options.
 
 .TP
-\fB\fC-v\fR, \fB\fC--version\fR
+\fB-v\fR, \fB--version\fR
 Show version of eza.
 
 
 .SH DISPLAY OPTIONS
 .TP
-\fB\fC-1\fR, \fB\fC--oneline\fR
+\fB-1\fR, \fB--oneline\fR
 Display one entry per line.
 
 .TP
-\fB\fC-F\fR, \fB\fC--classify\fR
+\fB-F\fR, \fB--classify\fR
 Display file kind indicators next to file names.
 
 .TP
-\fB\fC-G\fR, \fB\fC--grid\fR
+\fB-G\fR, \fB--grid\fR
 Display entries as a grid (default).
 
 .TP
-\fB\fC-l\fR, \fB\fC--long\fR
+\fB-l\fR, \fB--long\fR
 Display extended file metadata as a table.
 
 .TP
-\fB\fC-R\fR, \fB\fC--recurse\fR
+\fB-R\fR, \fB--recurse\fR
 Recurse into directories.
 
 .TP
-\fB\fC-T\fR, \fB\fC--tree\fR
+\fB-T\fR, \fB--tree\fR
 Recurse into directories as a tree.
 
 .TP
-\fB\fC-X\fR, \fB\fC--dereference\fR
+\fB-X\fR, \fB--dereference\fR
 Dereference symbolic links when displaying information.
 
 .TP
-\fB\fC-x\fR, \fB\fC--across\fR
+\fB-x\fR, \fB--across\fR
 Sort the grid across, rather than downwards.
 
 .TP
-\fB\fC--color=WHEN\fR, \fB\fC--colour=WHEN\fR
+\fB--color=WHEN\fR, \fB--colour=WHEN\fR
 When to use terminal colours (using ANSI escape code to colorize the output).
 
 .PP
-Valid settings are ‘\fB\fCalways\fR’, ‘\fB\fCautomatic\fR’ (or ‘\fB\fCauto\fR’ for short), and ‘\fB\fCnever\fR’.
-The default value is ‘\fB\fCautomatic\fR’.
+Valid settings are ‘\fBalways\fR’, ‘\fBautomatic\fR’ (or ‘\fBauto\fR’ for short), and ‘\fBnever\fR’.
+The default value is ‘\fBautomatic\fR’.
 
 .PP
-The default behavior (‘\fB\fCautomatic\fR’ or ‘\fB\fCauto\fR’) is to colorize the output only when the standard output is connected to a real terminal. If the output of \fB\fCeza\fR is redirected to a file or piped into another program, terminal colors will not be used. Setting this option to ‘\fB\fCalways\fR’ causes \fB\fCeza\fR to always output terminal color, while ‘\fB\fCnever\fR’ disables the use of terminal color.
+The default behavior (‘\fBautomatic\fR’ or ‘\fBauto\fR’) is to colorize the output only when the standard output is connected to a real terminal. If the output of \fBeza\fR is redirected to a file or piped into another program, terminal colors will not be used. Setting this option to ‘\fBalways\fR’ causes \fBeza\fR to always output terminal color, while ‘\fBnever\fR’ disables the use of terminal color.
 
 .PP
-Manually setting this option overrides \fB\fCNO_COLOR\fR environment.
+Manually setting this option overrides \fBNO_COLOR\fR environment.
 
 .TP
-\fB\fC--color-scale\fR, \fB\fC--colour-scale\fR
-highlight levels of \fB\fCfield\fR distinctly.
+\fB--color-scale\fR, \fB--colour-scale\fR
+highlight levels of \fBfield\fR distinctly.
 Use comma(,) separated list of all, age, size
 
 .TP
-\fB\fC--color-scale-mode\fR, \fB\fC--colour-scale-mode\fR
-Use gradient or fixed colors in \fB\fC--color-scale\fR\&.
+\fB--color-scale-mode\fR, \fB--colour-scale-mode\fR
+Use gradient or fixed colors in \fB--color-scale\fR\&.
 
 .PP
-Valid options are \fB\fCfixed\fR or \fB\fCgradient\fR\&.
-The default value is \fB\fCgradient\fR\&.
+Valid options are \fBfixed\fR or \fBgradient\fR\&.
+The default value is \fBgradient\fR\&.
 
 .TP
-\fB\fC--icons=WHEN\fR
+\fB--icons=WHEN\fR
 Display icons next to file names.
 
 .PP
-Valid settings are ‘\fB\fCalways\fR’, ‘\fB\fCautomatic\fR’ (‘\fB\fCauto\fR’ for short), and ‘\fB\fCnever\fR’.
-The default value is ‘\fB\fCautomatic\fR’.
+Valid settings are ‘\fBalways\fR’, ‘\fBautomatic\fR’ (‘\fBauto\fR’ for short), and ‘\fBnever\fR’.
+The default value is ‘\fBautomatic\fR’.
 
 .PP
-\fB\fCautomatic\fR or \fB\fCauto\fR will display icons only when the standard output is connected to a real terminal. If \fB\fCeza\fR is ran while in a \fB\fCtty\fR, or the output of \fB\fCeza\fR is either redirected to a file or piped into another program, icons will not be used. Setting this option to ‘\fB\fCalways\fR’ causes \fB\fCeza\fR to always display icons, while ‘\fB\fCnever\fR’ disables the use of icons.
+\fBautomatic\fR or \fBauto\fR will display icons only when the standard output is connected to a real terminal. If \fBeza\fR is ran while in a \fBtty\fR, or the output of \fBeza\fR is either redirected to a file or piped into another program, icons will not be used. Setting this option to ‘\fBalways\fR’ causes \fBeza\fR to always display icons, while ‘\fBnever\fR’ disables the use of icons.
 
 .TP
-\fB\fC--no-quotes\fR
+\fB--no-quotes\fR
 Don't quote file names with spaces.
 
 .TP
-\fB\fC--hyperlink\fR
+\fB--hyperlink\fR
 Display entries as hyperlinks
 
 .TP
-\fB\fC-w\fR, \fB\fC--width=COLS\fR
+\fB-w\fR, \fB--width=COLS\fR
 Set screen width in columns.
 
 .PP
-Valid options are \fB\fCnone\fR, \fB\fCabsolute\fR or \fB\fCrelative\fR\&.
-The default value is \fB\fCnone\fR
+Valid options are \fBnone\fR, \fBabsolute\fR or \fBrelative\fR\&.
+The default value is \fBnone\fR
 
 .PP
-\fB\fCabsolute\fR mode highlights based on file modification time relative to the past year.
-\fB\fCrelative\fR mode highlights based on file modification time in relation to other files. \fB\fCnone\fR disables highlighting.
+\fBabsolute\fR mode highlights based on file modification time relative to the past year.
+\fBrelative\fR mode highlights based on file modification time in relation to other files. \fBnone\fR disables highlighting.
 
 
 .SH FILTERING AND SORTING OPTIONS
 .TP
-\fB\fC-a\fR, \fB\fC--all\fR
+\fB-a\fR, \fB--all\fR
 Show hidden and “dot” files.
-Use this twice to also show the ‘\fB\fC\&.\fR’ and ‘\fB\fC\&..\fR’ directories.
+Use this twice to also show the ‘\fB\&.\fR’ and ‘\fB\&..\fR’ directories.
 
 .TP
-\fB\fC-A\fR, \fB\fC--almost-all\fR
-Equivalent to --all; included for compatibility with \fB\fCls -A\fR\&.
+\fB-A\fR, \fB--almost-all\fR
+Equivalent to --all; included for compatibility with \fBls -A\fR\&.
 
 .TP
-\fB\fC-d\fR, \fB\fC--list-dirs\fR
+\fB-d\fR, \fB--list-dirs\fR
 List directories as regular files, rather than recursing and listing their contents.
 
 .TP
-\fB\fC-L\fR, \fB\fC--level=DEPTH\fR
+\fB-L\fR, \fB--level=DEPTH\fR
 Limit the depth of recursion.
 
 .TP
-\fB\fC-r\fR, \fB\fC--reverse\fR
+\fB-r\fR, \fB--reverse\fR
 Reverse the sort order.
 
 .TP
-\fB\fC-s\fR, \fB\fC--sort=SORT_FIELD\fR
+\fB-s\fR, \fB--sort=SORT_FIELD\fR
 Which field to sort by.
 
 .PP
-Valid sort fields are ‘\fB\fCname\fR’, ‘\fB\fCName\fR’, ‘\fB\fCextension\fR’, ‘\fB\fCExtension\fR’, ‘\fB\fCsize\fR’, ‘\fB\fCmodified\fR’, ‘\fB\fCchanged\fR’, ‘\fB\fCaccessed\fR’, ‘\fB\fCcreated\fR’, ‘\fB\fCinode\fR’, ‘\fB\fCtype\fR’, and ‘\fB\fCnone\fR’.
+Valid sort fields are ‘\fBname\fR’, ‘\fBName\fR’, ‘\fBextension\fR’, ‘\fBExtension\fR’, ‘\fBsize\fR’, ‘\fBmodified\fR’, ‘\fBchanged\fR’, ‘\fBaccessed\fR’, ‘\fBcreated\fR’, ‘\fBinode\fR’, ‘\fBtype\fR’, and ‘\fBnone\fR’.
 
 .PP
-The \fB\fCmodified\fR sort field has the aliases ‘\fB\fCdate\fR’, ‘\fB\fCtime\fR’, and ‘\fB\fCnewest\fR’, and its reverse order has the aliases ‘\fB\fCage\fR’ and ‘\fB\fColdest\fR’.
+The \fBmodified\fR sort field has the aliases ‘\fBdate\fR’, ‘\fBtime\fR’, and ‘\fBnewest\fR’, and its reverse order has the aliases ‘\fBage\fR’ and ‘\fBoldest\fR’.
 
 .PP
 Sort fields starting with a capital letter will sort uppercase before lowercase: ‘A’ then ‘B’ then ‘a’ then ‘b’. Fields starting with a lowercase letter will mix them: ‘A’ then ‘a’ then ‘B’ then ‘b’.
 
 .TP
-\fB\fC-I\fR, \fB\fC--ignore-glob=GLOBS\fR
+\fB-I\fR, \fB--ignore-glob=GLOBS\fR
 Glob patterns, pipe-separated, of files to ignore.
 
 .TP
-\fB\fC--git-ignore\fR [if eza was built with git support]
+\fB--git-ignore\fR [if eza was built with git support]
 Do not list files that are ignored by Git.
 
 .TP
-\fB\fC--group-directories-first\fR
+\fB--group-directories-first\fR
 List directories before other files.
 
 .TP
-\fB\fC-D\fR, \fB\fC--only-dirs\fR
+\fB-D\fR, \fB--only-dirs\fR
 List only directories, not files.
 
 .TP
-\fB\fC-f\fR, \fB\fC--only-files\fR
+\fB-f\fR, \fB--only-files\fR
 List only files, not directories.
 
 
 .SH LONG VIEW OPTIONS
 .PP
-These options are available when running with \fB\fC--long\fR (\fB\fC-l\fR):
+These options are available when running with \fB--long\fR (\fB-l\fR):
 
 .TP
-\fB\fC-b\fR, \fB\fC--binary\fR
+\fB-b\fR, \fB--binary\fR
 List file sizes with binary prefixes.
 
 .TP
-\fB\fC-B\fR, \fB\fC--bytes\fR
+\fB-B\fR, \fB--bytes\fR
 List file sizes in bytes, without any prefixes.
 
 .TP
-\fB\fC--changed\fR
+\fB--changed\fR
 Use the changed timestamp field.
 
 .TP
-\fB\fC-g\fR, \fB\fC--group\fR
+\fB-g\fR, \fB--group\fR
 List each file’s group.
 
 .TP
-\fB\fC--smart-group\fR
+\fB--smart-group\fR
 Only show group if it has a different name from owner
 
 .TP
-\fB\fC-h\fR, \fB\fC--header\fR
+\fB-h\fR, \fB--header\fR
 Add a header row to each column.
 
 .TP
-\fB\fC-H\fR, \fB\fC--links\fR
+\fB-H\fR, \fB--links\fR
 List each file’s number of hard links.
 
 .TP
-\fB\fC-i\fR, \fB\fC--inode\fR
+\fB-i\fR, \fB--inode\fR
 List each file’s inode number.
 
 .TP
-\fB\fC-m\fR, \fB\fC--modified\fR
+\fB-m\fR, \fB--modified\fR
 Use the modified timestamp field.
 
 .TP
-\fB\fC-M\fR, \fB\fC--mounts\fR
+\fB-M\fR, \fB--mounts\fR
 Show mount details (Linux and Mac only)
 
 .TP
-\fB\fC-n\fR, \fB\fC--numeric\fR
+\fB-n\fR, \fB--numeric\fR
 List numeric user and group IDs.
 
 .TP
-\fB\fC-O\fR, \fB\fC--flags\fR
-List file flags on Mac and BSD systems and file attributes on Windows systems.  By default, Windows attributes are displayed in a long form.  To display in attributes as single character set the environment variable \fB\fCEZA_WINDOWS_ATTRIBUTES=short\fR\&.  On BSD systems see chflags(1) for a list of file flags and their meanings.
+\fB-O\fR, \fB--flags\fR
+List file flags on Mac and BSD systems and file attributes on Windows systems.  By default, Windows attributes are displayed in a long form.  To display in attributes as single character set the environment variable \fBEZA_WINDOWS_ATTRIBUTES=short\fR\&.  On BSD systems see chflags(1) for a list of file flags and their meanings.
 
 .TP
-\fB\fC-S\fR, \fB\fC--blocksize\fR
+\fB-S\fR, \fB--blocksize\fR
 List each file’s size of allocated file system blocks.
 
 .TP
-\fB\fC-t\fR, \fB\fC--time=WORD\fR
+\fB-t\fR, \fB--time=WORD\fR
 Which timestamp field to list.
 
-Valid timestamp fields are ‘\fB\fCmodified\fR’, ‘\fB\fCchanged\fR’, ‘\fB\fCaccessed\fR’, and ‘\fB\fCcreated\fR’.
+Valid timestamp fields are ‘\fBmodified\fR’, ‘\fBchanged\fR’, ‘\fBaccessed\fR’, and ‘\fBcreated\fR’.
 
 .TP
-\fB\fC--time-style=STYLE\fR
+\fB--time-style=STYLE\fR
 How to format timestamps.
 
-Valid timestamp styles are ‘\fB\fCdefault\fR’, ‘\fB\fCiso\fR’, ‘\fB\fClong-iso\fR’, ‘\fB\fCfull-iso\fR’, ‘\fB\fCrelative\fR’, or a custom style ‘\fB\fC+<FORMAT>\fR’ (e.g., ‘\fB\fC+%Y-%m-%d %H:%M\fR’ => ‘\fB\fC2023-09-30 13:00\fR’).
+Valid timestamp styles are ‘\fBdefault\fR’, ‘\fBiso\fR’, ‘\fBlong-iso\fR’, ‘\fBfull-iso\fR’, ‘\fBrelative\fR’, or a custom style ‘\fB+<FORMAT>\fR’ (e.g., ‘\fB+%Y-%m-%d %H:%M\fR’ => ‘\fB2023-09-30 13:00\fR’).
 
 .PP
-\fB\fC<FORMAT>\fR should be a chrono format string.  For details on the chrono format syntax, please read: https://docs.rs/chrono/latest/chrono/format/strftime/index.html .
+\fB<FORMAT>\fR should be a chrono format string.  For details on the chrono format syntax, please read: https://docs.rs/chrono/latest/chrono/format/strftime/index.html .
 
 .PP
-Alternatively, \fB\fC<FORMAT>\fR can be a two line string, the first line will be used for non-recent files and the second for recent files.  E.g., if \fB\fC<FORMAT>\fR is "\fB\fC%Y-%m-%d %H<newline>--%m-%d %H:%M\fR", non-recent files => "\fB\fC2022-12-30 13\fR", recent files => "\fB\fC--09-30 13:34\fR".
+Alternatively, \fB<FORMAT>\fR can be a two line string, the first line will be used for non-recent files and the second for recent files.  E.g., if \fB<FORMAT>\fR is "\fB%Y-%m-%d %H<newline>--%m-%d %H:%M\fR", non-recent files => "\fB2022-12-30 13\fR", recent files => "\fB--09-30 13:34\fR".
 
 .TP
-\fB\fC--total-size\fR
+\fB--total-size\fR
 Show recursive directory size (unix only).
 
 .TP
-\fB\fC-u\fR, \fB\fC--accessed\fR
+\fB-u\fR, \fB--accessed\fR
 Use the accessed timestamp field.
 
 .TP
-\fB\fC-U\fR, \fB\fC--created\fR
+\fB-U\fR, \fB--created\fR
 Use the created timestamp field.
 
 .TP
-\fB\fC--no-permissions\fR
+\fB--no-permissions\fR
 Suppress the permissions field.
 
 .TP
-\fB\fC-o\fR, \fB\fC--octal-permissions\fR
+\fB-o\fR, \fB--octal-permissions\fR
 List each file's permissions in octal format.
 
 .TP
-\fB\fC--no-filesize\fR
+\fB--no-filesize\fR
 Suppress the file size field.
 
 .TP
-\fB\fC--no-user\fR
+\fB--no-user\fR
 Suppress the user field.
 
 .TP
-\fB\fC--no-time\fR
+\fB--no-time\fR
 Suppress the time field.
 
 .TP
-\fB\fC--stdin\fR
-When you wish to pipe directories to eza/read from stdin. Separate one per line or define custom separation char in \fB\fCEZA_STDIN_SEPARATOR\fR env variable.
+\fB--stdin\fR
+When you wish to pipe directories to eza/read from stdin. Separate one per line or define custom separation char in \fBEZA_STDIN_SEPARATOR\fR env variable.
 
 .TP
-\fB\fC-@\fR, \fB\fC--extended\fR
+\fB-@\fR, \fB--extended\fR
 List each file’s extended attributes and sizes.
 
 .TP
-\fB\fC-Z\fR, \fB\fC--context\fR
+\fB-Z\fR, \fB--context\fR
 List each file's security context.
 
 .TP
-\fB\fC--git\fR  [if eza was built with git support]
+\fB--git\fR  [if eza was built with git support]
 List each file’s Git status, if tracked.
-This adds a two-character column indicating the staged and unstaged statuses respectively. The status character can be ‘\fB\fC-\fR’ for not modified, ‘\fB\fCM\fR’ for a modified file, ‘\fB\fCN\fR’ for a new file, ‘\fB\fCD\fR’ for deleted, ‘\fB\fCR\fR’ for renamed, ‘\fB\fCT\fR’ for type-change, ‘\fB\fCI\fR’ for ignored, and ‘\fB\fCU\fR’ for conflicted. Directories will be shown to have the status of their contents, which is how ‘deleted’ is possible if a directory contains a file that has a certain status, it will be shown to have that status.
+This adds a two-character column indicating the staged and unstaged statuses respectively. The status character can be ‘\fB-\fR’ for not modified, ‘\fBM\fR’ for a modified file, ‘\fBN\fR’ for a new file, ‘\fBD\fR’ for deleted, ‘\fBR\fR’ for renamed, ‘\fBT\fR’ for type-change, ‘\fBI\fR’ for ignored, and ‘\fBU\fR’ for conflicted. Directories will be shown to have the status of their contents, which is how ‘deleted’ is possible if a directory contains a file that has a certain status, it will be shown to have that status.
 
 .TP
-\fB\fC--git-repos\fR [if eza was built with git support]
+\fB--git-repos\fR [if eza was built with git support]
 List each directory’s Git status, if tracked.
-Symbols shown are \fB\fC|\fR= clean, \fB\fC+\fR= dirty, and \fB\fC~\fR= for unknown.
+Symbols shown are \fB|\fR= clean, \fB+\fR= dirty, and \fB~\fR= for unknown.
 
 .TP
-\fB\fC--git-repos-no-status\fR [if eza was built with git support]
+\fB--git-repos-no-status\fR [if eza was built with git support]
 List if a directory is a Git repository, but not its status.
-All Git repository directories will be shown as (themed) \fB\fC-\fR without status indicated.
+All Git repository directories will be shown as (themed) \fB-\fR without status indicated.
 
 .TP
-\fB\fC--no-git\fR
-Don't show Git status (always overrides \fB\fC--git\fR, \fB\fC--git-repos\fR, \fB\fC--git-repos-no-status\fR)
+\fB--no-git\fR
+Don't show Git status (always overrides \fB--git\fR, \fB--git-repos\fR, \fB--git-repos-no-status\fR)
 
 
 .SH ENVIRONMENT VARIABLES
 .PP
-If an environment variable prefixed with \fB\fCEZA_\fR is not set, for backward compatibility, it will default to its counterpart starting with \fB\fCEXA_\fR\&.
+If an environment variable prefixed with \fBEZA_\fR is not set, for backward compatibility, it will default to its counterpart starting with \fBEXA_\fR\&.
 
 .PP
 eza responds to the following environment variables:
 
-.SH \fB\fCCOLUMNS\fR
+.SH \fBCOLUMNS\fR
 .PP
-Overrides the width of the terminal, in characters, however, \fB\fC-w\fR takes precedence.
+Overrides the width of the terminal, in characters, however, \fB-w\fR takes precedence.
 
 .PP
-For example, ‘\fB\fCCOLUMNS=80 eza\fR’ will show a grid view with a maximum width of 80 characters.
+For example, ‘\fBCOLUMNS=80 eza\fR’ will show a grid view with a maximum width of 80 characters.
 
 .PP
-This option won’t do anything when eza’s output doesn’t wrap, such as when using the \fB\fC--long\fR view.
+This option won’t do anything when eza’s output doesn’t wrap, such as when using the \fB--long\fR view.
 
-.SH \fB\fCEZA_STRICT\fR
+.SH \fBEZA_STRICT\fR
 .PP
 Enables \fIstrict mode\fP, which will make eza error when two command-line options are incompatible.
 
 .PP
-Usually, options can override each other going right-to-left on the command line, so that eza can be given aliases: creating an alias ‘\fB\fCeza=eza --sort=ext\fR’ then running ‘\fB\fCeza --sort=size\fR’ with that alias will run ‘\fB\fCeza --sort=ext --sort=size\fR’, and the sorting specified by the user will override the sorting specified by the alias.
+Usually, options can override each other going right-to-left on the command line, so that eza can be given aliases: creating an alias ‘\fBeza=eza --sort=ext\fR’ then running ‘\fBeza --sort=size\fR’ with that alias will run ‘\fBeza --sort=ext --sort=size\fR’, and the sorting specified by the user will override the sorting specified by the alias.
 
 .PP
 In strict mode, the two options will not co-operate, and eza will error.
@@ -362,52 +362,52 @@ In strict mode, the two options will not co-operate, and eza will error.
 .PP
 This option is intended for use with automated scripts and other situations where you want to be certain you’re typing in the right command.
 
-.SH \fB\fCEZA_GRID_ROWS\fR
+.SH \fBEZA_GRID_ROWS\fR
 .PP
-Limits the grid-details view (‘\fB\fCeza --grid --long\fR’) so it’s only activated when at least the given number of rows of output would be generated.
+Limits the grid-details view (‘\fBeza --grid --long\fR’) so it’s only activated when at least the given number of rows of output would be generated.
 
 .PP
 With widescreen displays, it’s possible for the grid to look very wide and sparse, on just one or two lines with none of the columns lining up.
 By specifying a minimum number of rows, you can only use the view if it’s going to be worth using.
 
-.SH \fB\fCEZA_ICON_SPACING\fR
+.SH \fBEZA_ICON_SPACING\fR
 .PP
-Specifies the number of spaces to print between an icon (see the ‘\fB\fC--icons\fR’ option) and its file name.
+Specifies the number of spaces to print between an icon (see the ‘\fB--icons\fR’ option) and its file name.
 
 .PP
 Different terminals display icons differently, as they usually take up more than one character width on screen, so there’s no “standard” number of spaces that eza can use to separate an icon from text. One space may place the icon too close to the text, and two spaces may place it too far away. So the choice is left up to the user to configure depending on their terminal emulator.
 
-.SH \fB\fCNO_COLOR\fR
+.SH \fBNO_COLOR\fR
 .PP
-Disables colours in the output (regardless of its value). Can be overridden by \fB\fC--color\fR option.
+Disables colours in the output (regardless of its value). Can be overridden by \fB--color\fR option.
 
 .PP
-See \fB\fChttps://no-color.org/\fR for details.
+See \fBhttps://no-color.org/\fR for details.
 
-.SH \fB\fCLS_COLORS\fR, \fB\fCEZA_COLORS\fR
+.SH \fBLS_COLORS\fR, \fBEZA_COLORS\fR
 .PP
 Specifies the colour scheme used to highlight files based on their name and kind, as well as highlighting metadata and parts of the UI.
 
 .PP
-For more information on the format of these environment variables, see the eza_colors.5.md
+For more information on the format of these environment variables, see the 
 \[la]eza_colors.5.md\[ra] manual page.
 
-.SH \fB\fCEZA_OVERRIDE_GIT\fR
+.SH \fBEZA_OVERRIDE_GIT\fR
 .PP
-Overrides any \fB\fC--git\fR or \fB\fC--git-repos\fR argument
+Overrides any \fB--git\fR or \fB--git-repos\fR argument
 
-.SH \fB\fCEZA_MIN_LUMINANCE\fR
+.SH \fBEZA_MIN_LUMINANCE\fR
 .PP
 Specifies the minimum luminance to use when decay is active. It's value can be between -100 to 100.
 
-.SH \fB\fCEZA_ICONS_AUTO\fR
+.SH \fBEZA_ICONS_AUTO\fR
 .PP
-If set, automates the same behavior as using \fB\fC--icons\fR or \fB\fC--icons=auto\fR\&. Useful for if you always want to have icons enabled.
+If set, automates the same behavior as using \fB--icons\fR or \fB--icons=auto\fR\&. Useful for if you always want to have icons enabled.
 
 .PP
-Any explicit use of the \fB\fC--icons=WHEN\fR flag overrides this behavior.
+Any explicit use of the \fB--icons=WHEN\fR flag overrides this behavior.
 
-.SH \fB\fCEZA_STDIN_SEPARATOR\fR
+.SH \fBEZA_STDIN_SEPARATOR\fR
 .PP
 Specifies the separator to use when file names are piped from stdin. Defaults to newline.
 
@@ -431,8 +431,8 @@ If there was a problem with the command-line arguments.
 eza is maintained by Christina Sørensen and many other contributors.
 
 .PP
-\fBSource code:\fP \fB\fChttps://github.com/eza-community/eza\fR \\
-\fBContributors:\fP \fB\fChttps://github.com/eza-community/eza/graphs/contributors\fR
+\fBSource code:\fP \fBhttps://github.com/eza-community/eza\fR \\
+\fBContributors:\fP \fBhttps://github.com/eza-community/eza/graphs/contributors\fR
 
 .PP
 Our infinite thanks to Benjamin ‘ogham’ Sago and all the other contributors of exa, from which eza was forked.
@@ -441,10 +441,10 @@ Our infinite thanks to Benjamin ‘ogham’ Sago and all the other contributors 
 .SH SEE ALSO
 .RS
 .IP \(bu 2
-eza_colors.5.md
+
 \[la]eza_colors.5.md\[ra]
 .IP \(bu 2
-eza_colors-explanation.5.md
-\[la]eza_colors-explanation.5.md\[ra]
+
+\[la]eza_colors\-explanation.5.md\[ra]
 
 .RE
