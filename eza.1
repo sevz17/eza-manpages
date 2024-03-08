@@ -52,8 +52,15 @@ Show version of eza.
 Display one entry per line.
 
 .TP
-\fB-F\fR, \fB--classify\fR
+\fB-F\fR, \fB--classify=WHEN\fR
 Display file kind indicators next to file names.
+
+.PP
+Valid settings are ‘\fBalways\fR’, ‘\fBautomatic\fR’ (or ‘\fBauto\fR’ for short), and ‘\fBnever\fR’.
+The default value is ‘\fBautomatic\fR’.
+
+.PP
+The default behavior (\fBautomatic\fR or \fBauto\fR) will display file kind indicators only when the standard output is connected to a real terminal. If \fBeza\fR is ran while in a \fBtty\fR, or the output of \fBeza\fR is either redirected to a file or piped into another program, file kind indicators will not be used. Setting this option to ‘\fBalways\fR’ causes \fBeza\fR to always display file kind indicators, while ‘\fBnever\fR’ disables the use of file kind indicators.
 
 .TP
 \fB-G\fR, \fB--grid\fR
